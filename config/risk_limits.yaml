@@ -1,0 +1,47 @@
+# Limites de risco do assessor. Fonte única da verdade para os números.
+# A justificativa de cada limite está em docs/estrategia/limites-de-risco.md.
+# Mude os dois arquivos no mesmo commit.
+# Valores iniciais, a validar no backtest.
+
+carteira:
+  num_acoes_min: 15
+  num_acoes_max: 20
+  reserva_renda_fixa_min: 0.10
+  reserva_renda_fixa_max: 0.15
+
+posicao:
+  peso_max_por_acao: 0.10
+  peso_max_por_setor: 0.30
+
+liquidez:
+  volume_medio_diario_min_brl: 20_000_000
+  janela_volume_dias: 63          # ~3 meses de pregão
+  valor_mercado_min_brl: 2_000_000_000
+  pregoes_para_zerar_max: 5
+  participacao_max_no_volume: 0.20
+
+volatilidade:
+  alvo_anual_max: 0.25
+
+drawdown:
+  stop_carteira: 0.20             # queda desde o pico
+  reducao_exposicao_no_stop: 0.50
+  exige_revisao_humana: true
+
+fatores:
+  exposicao_max_sensivel_juros_domesticos: 0.50
+  reduzir_antes_de_eleicoes: true
+
+subdesempenho:
+  pontos_abaixo_ibovespa_12m: 0.10
+  acao: pausar_compras_e_revisar
+
+universo:
+  permite_bdr: false
+  permite_opcoes: false
+  permite_alavancagem: false
+  excluir_divida_liquida_ebitda_acima_de: 3.0   # exceto bancos
+
+execucao:
+  aprovacao_humana_obrigatoria: true
+  tipo_ordem: limitada
