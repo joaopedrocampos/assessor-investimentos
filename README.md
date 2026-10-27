@@ -1,9 +1,9 @@
-# Assessor de investimentos
+# Investment advisor
 
-Agente de IA para assessorar investimentos de longo prazo em ações da B3: seleção por valor e qualidade, limites de risco rígidos e leitura de eventos políticos e econômicos. Não é day trade e nenhuma ordem sai sem aprovação humana.
+AI agent that advises on long-term investing in B3 stocks: value and quality selection, hard risk limits, and reading of political and economic events. Not day trading; no order is sent without human approval.
 
-- Documentação: [`docs/README.md`](docs/README.md)
-- Limites de risco: [`config/risk_limits.yaml`](config/risk_limits.yaml)
-- Instruções para o Claude: [`CLAUDE.md`](CLAUDE.md)
+- Docs: [`docs/README.md`](docs/README.md)
+- Risk limits: [`config/risk_limits.yaml`](config/risk_limits.yaml)
+- Instructions for Claude: [`CLAUDE.md`](CLAUDE.md)
 
-Projeto pessoal de pesquisa. Não é recomendação de investimento.
+Personal research project. Not investment advice.

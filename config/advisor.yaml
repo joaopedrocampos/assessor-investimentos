@@ -1,0 +1,6 @@
+# Advisor settings that are not risk limits.
+
+reports:
+  # Language of the weekly summaries and alerts sent to João.
+  # "en" or "pt-BR". Repo docs and code stay in English regardless.
+  language: en

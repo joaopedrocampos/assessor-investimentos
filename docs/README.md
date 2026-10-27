@@ -1,32 +1,33 @@
-# Documentação
+# Docs
 
-Base de conhecimento do assessor. Cada arquivo cobre um assunto; os números de risco ficam em `config/risk_limits.yaml`.
+Knowledge base for the advisor. One subject per file; risk numbers live in `config/risk_limits.yaml`.
 
-## Resumo
+## Summary
 
-Dá para construir um bot que aproveite o que funcionou em 9 fundos estudados, mas não um que copie o Alaska Black: o fundo depende de julgamento e de apostas sem limite de risco, que geraram -57,2% em 2024, +67,6% em 2025 e uma queda forte no pregão pós-eleição de 26/10/2026.
+It is possible to build a bot that uses what worked across the 9 funds studied, but not one that copies Alaska Black: that fund relies on judgment and on bets with no risk limits, which produced -57.2% in 2024, +67.6% in 2025 and a sharp drop in the post-election session of 26/10/2026.
 
-- **O que copiar:** seleção por valor e qualidade (Atmos, Dynamo, Vokin), carteira de 15 a 20 ações e horizonte longo.
-- **O que evitar:** apostas que dependem do mesmo fator (Alaska Black), posições ilíquidas (CTM) e anos seguidos de subdesempenho sem revisão (Tork, 3R Cedar II).
-- **O que o bot acrescenta:** limites rígidos por ação, setor, liquidez e fator, stop da carteira e redução de risco antes de eleições.
+- **What to copy:** value and quality selection (Atmos, Dynamo, Vokin), a 15-to-20-stock portfolio and a long horizon.
+- **What to avoid:** bets that depend on the same factor (Alaska Black), illiquid positions (CTM) and years of underperformance without review (Tork, 3R Cedar II).
+- **What the bot adds:** hard limits per stock, sector, liquidity and factor, a portfolio stop, and risk reduction before elections.
 
-## Índice
+## Index
 
-| Arquivo | Conteúdo |
+| File | Contents |
 | --- | --- |
-| `pesquisa/metodologia.md` | Como os 9 fundos foram escolhidos e as limitações da pesquisa |
-| `pesquisa/alaska-black.md` | Carteira, fases e processo do Alaska Black (2016–out/2026) |
-| `pesquisa/fundos-consistentes.md` | Atmos, Dynamo Cougar e Vokin |
-| `pesquisa/campeoes-recentes.md` | Infrad Master e Opportunity Ações |
-| `pesquisa/casos-de-erro.md` | Tork, CTM e 3R Cedar II |
-| `pesquisa/comparativo.md` | Os 9 fundos lado a lado |
-| `licoes.md` | Seis padrões e o que vira código ou fica no julgamento |
-| `estrategia/especificacao.md` | Universo, seleção, rotina e arquitetura técnica |
-| `estrategia/limites-de-risco.md` | Justificativa de cada limite de risco |
-| `estrategia/inteligencia-de-mercado.md` | Notícias, eventos históricos e probabilidades |
-| `estrategia/backtest.md` | Critérios de backtest e próximos passos |
-| `decisoes/` | ADRs com as decisões de arquitetura |
+| `glossary.md` | Brazilian market terms kept in Portuguese |
+| `research/methodology.md` | How the 9 funds were chosen and the research limitations |
+| `research/alaska-black.md` | Alaska Black portfolio, phases and process (2016–Oct 2026) |
+| `research/consistent-funds.md` | Atmos, Dynamo Cougar and Vokin |
+| `research/recent-winners.md` | Infrad Master and Opportunity Ações |
+| `research/failure-cases.md` | Tork, CTM and 3R Cedar II |
+| `research/comparison.md` | The 9 funds side by side |
+| `lessons.md` | Six patterns, and what becomes code vs. stays judgment |
+| `strategy/specification.md` | Universe, selection, routine and technical architecture |
+| `strategy/risk-limits.md` | Rationale for each risk limit |
+| `strategy/market-intelligence.md` | News, historical events and probabilities |
+| `strategy/backtest.md` | Backtest criteria and roadmap |
+| `decisions/` | Architecture decision records |
 
-Pesquisa feita em 26/10/2026. Dados de mercado envelhecem: confira a data antes de usar um número.
+Research done on 26/10/2026. Market data goes stale: check the date before using a number. Dates are written DD/MM/YYYY.
 
-Este material é uma base técnica para pesquisa, não recomendação de investimento.
+This is technical research material, not investment advice.

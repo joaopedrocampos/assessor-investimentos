@@ -1,47 +1,47 @@
-# Limites de risco do assessor. Fonte única da verdade para os números.
-# A justificativa de cada limite está em docs/estrategia/limites-de-risco.md.
-# Mude os dois arquivos no mesmo commit.
-# Valores iniciais, a validar no backtest.
+# Advisor risk limits. Single source of truth for the numbers.
+# The rationale for each limit is in docs/strategy/risk-limits.md.
+# Change both files in the same commit (tests/test_risk_limits.py enforces it).
+# Starting values, to be validated in the backtest.
 
-carteira:
-  num_acoes_min: 15
-  num_acoes_max: 20
-  reserva_renda_fixa_min: 0.10
-  reserva_renda_fixa_max: 0.15
+portfolio:
+  min_stocks: 15
+  max_stocks: 20
+  fixed_income_reserve_min: 0.10
+  fixed_income_reserve_max: 0.15
 
-posicao:
-  peso_max_por_acao: 0.10
-  peso_max_por_setor: 0.30
+position:
+  max_weight_per_stock: 0.10
+  max_weight_per_sector: 0.30
 
-liquidez:
-  volume_medio_diario_min_brl: 20_000_000
-  janela_volume_dias: 63          # ~3 meses de pregão
-  valor_mercado_min_brl: 2_000_000_000
-  pregoes_para_zerar_max: 5
-  participacao_max_no_volume: 0.20
+liquidity:
+  min_avg_daily_volume_brl: 20_000_000
+  volume_window_days: 63          # ~3 months of trading sessions
+  min_market_cap_brl: 2_000_000_000
+  max_sessions_to_exit: 5
+  max_share_of_daily_volume: 0.20
 
-volatilidade:
-  alvo_anual_max: 0.25
+volatility:
+  max_annual_target: 0.25
 
 drawdown:
-  stop_carteira: 0.20             # queda desde o pico
-  reducao_exposicao_no_stop: 0.50
-  exige_revisao_humana: true
+  portfolio_stop: 0.20            # drop from peak
+  exposure_cut_at_stop: 0.50
+  requires_human_review: true
 
-fatores:
-  exposicao_max_sensivel_juros_domesticos: 0.50
-  reduzir_antes_de_eleicoes: true
+factors:
+  max_exposure_domestic_rate_sensitive: 0.50
+  reduce_before_elections: true
 
-subdesempenho:
-  pontos_abaixo_ibovespa_12m: 0.10
-  acao: pausar_compras_e_revisar
+underperformance:
+  points_below_ibovespa_12m: 0.10
+  action: pause_buys_and_review
 
-universo:
-  permite_bdr: false
-  permite_opcoes: false
-  permite_alavancagem: false
-  excluir_divida_liquida_ebitda_acima_de: 3.0   # exceto bancos
+universe:
+  allow_bdr: false
+  allow_options: false
+  allow_leverage: false
+  max_net_debt_to_ebitda: 3.0     # banks excluded
 
-execucao:
-  aprovacao_humana_obrigatoria: true
-  tipo_ordem: limitada
+execution:
+  human_approval_required: true
+  order_type: limit

@@ -1,35 +1,43 @@
-# Assessor de investimentos
+# Investment advisor
 
-Agente de IA que assessora João Pedro em ações da B3 com horizonte de longo prazo (aposentadoria, dos 30 aos 50 e poucos anos). Não é day trade. Rebalanceamento mensal; nenhuma ordem sai sem aprovação humana.
+AI agent that advises João Pedro on long-term investing in B3 (Brazilian) stocks. Horizon: retirement, from his 30s to his early 50s. Not day trading. Monthly rebalancing; no order is sent without human approval.
 
-## Onde está cada coisa
+## Where things are
 
-| Preciso de... | Leia |
+| I need... | Read |
 | --- | --- |
-| Visão geral e índice da documentação | `docs/README.md` |
-| Números dos limites de risco (fonte da verdade) | `config/risk_limits.yaml` |
-| Por que cada limite existe | `docs/estrategia/limites-de-risco.md` |
-| Como o bot escolhe ações e opera | `docs/estrategia/especificacao.md` |
-| Camada de notícias, eventos e probabilidades | `docs/estrategia/inteligencia-de-mercado.md` |
-| Pesquisa sobre fundos (Alaska Black e outros 8) | `docs/pesquisa/` |
-| Lições extraídas da pesquisa | `docs/licoes.md` |
-| Decisões de arquitetura já tomadas | `docs/decisoes/` |
-| Procedimentos repetíveis | `.claude/skills/` |
+| Overview and docs index | `docs/README.md` |
+| Brazilian market terms kept in Portuguese | `docs/glossary.md` |
+| Risk limit numbers (source of truth) | `config/risk_limits.yaml` |
+| Why each risk limit exists | `docs/strategy/risk-limits.md` |
+| How the bot picks stocks and operates | `docs/strategy/specification.md` |
+| News, historical events and probabilities layer | `docs/strategy/market-intelligence.md` |
+| Fund research (Alaska Black and 8 others) | `docs/research/` |
+| Lessons drawn from the research | `docs/lessons.md` |
+| Architecture decisions already made | `docs/decisions/` |
+| Repeatable procedures | `.claude/skills/` |
 
-Leia só o que a tarefa precisa. Não carregue a pasta `docs/` inteira.
+Read only what the task needs. Do not load all of `docs/`.
 
-## Regras de trabalho
+## Language
 
-- Separe fatos com fonte de opiniões e estimativas. Todo número de mercado em `docs/` leva link para a fonte.
-- Pesquise antes de afirmar qualquer dado de mercado atual; dados nos docs têm data e envelhecem.
-- Fale em cenários e probabilidades, nunca em certezas.
-- Aponte riscos e discorde quando necessário. Isto não é recomendação de investimento; as decisões são do João.
-- Um limite de risco muda em `config/risk_limits.yaml` e na justificativa em `docs/estrategia/limites-de-risco.md`, no mesmo commit. Nunca só em um dos dois.
-- Decisão de arquitetura relevante vira um ADR em `docs/decisoes/` (próximo número livre).
+- The repo is in English: code, docs, config keys, skills, commit messages.
+- Brazilian market terms stay in Portuguese (Selic, CDI, Ibovespa, Copom, fato relevante, tickers). See `docs/glossary.md`.
+- Sources are often in Portuguese; read them as-is and write conclusions in English.
+- Chat with João is in Portuguese. The language of the advisor's reports to him is set in `config/advisor.yaml`.
 
-## Código
+## Working rules
 
-- Python 3.12, `src/assessor/`, testes em `tests/` com pytest.
-- TDD para regras de risco e de seleção: são a parte que protege o dinheiro.
-- Limites de risco são lidos de `config/risk_limits.yaml`, nunca escritos direto no código.
-- Backtest sem viés de sobrevivência e sem olhar o futuro (ver `docs/estrategia/backtest.md`).
+- Separate sourced facts from opinions and estimates. Every market figure in `docs/` links to its source.
+- Search before stating any current market figure; numbers in the docs are dated and go stale.
+- Speak in scenarios and probabilities, never certainties.
+- Point out risks and disagree when warranted. This is not investment advice; João makes the decisions.
+- A risk limit changes in `config/risk_limits.yaml` and in its rationale in `docs/strategy/risk-limits.md` in the same commit. A test enforces this.
+- A significant architecture decision becomes an ADR in `docs/decisions/` (next free number).
+
+## Code
+
+- Python 3.12, package in `src/advisor/`, tests in `tests/` with pytest.
+- TDD for risk and selection rules: they are the part that protects the money.
+- Risk limits are read from `config/risk_limits.yaml`, never hard-coded.
+- Backtests have no survivorship bias and no look-ahead (see `docs/strategy/backtest.md`).

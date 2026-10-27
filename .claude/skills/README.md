@@ -1,22 +1,22 @@
-# Skills do projeto
+# Project skills
 
-Skill é um procedimento repetível que exige julgamento. Conhecimento vai para `docs/`; regra verificável vai para código ou `config/`.
+A skill is a repeatable procedure that needs judgment. Knowledge goes in `docs/`; checkable rules go in code or `config/`.
 
-## Quando criar uma skill
+## When to create a skill
 
-- O mesmo procedimento já foi feito pelo menos duas vezes nas conversas.
-- Ele tem passos que o Claude erra ou esquece sem orientação (fontes certas, armadilhas, formato de saída).
-- Não dá para resolver com um script ou um teste.
+- The same procedure has already been done at least twice in conversations.
+- It has steps Claude gets wrong or forgets without guidance (right sources, pitfalls, output format).
+- It cannot be solved with a script or a test.
 
-Cada skill é criada uma de cada vez e testada antes de entrar: rodar a tarefa sem a skill, ver onde falha, escrever a skill para corrigir isso e rodar de novo.
+Create one skill at a time and test it before it goes in: run the task without the skill, see where it fails, write the skill to fix that, run it again.
 
-## Candidatas
+## Candidates
 
-| Skill | Gatilho | Já se repetiu? |
+| Skill | Trigger | Has it repeated? |
 | --- | --- | --- |
-| `pesquisando-fundo` | Analisar um fundo de ações novo para a base de pesquisa | Sim, 9 vezes em 26/10/2026 |
-| `analisando-evento-de-mercado` | Um evento político ou econômico relevante acontece | Ainda não |
-| `revisando-carteira` | Revisão semanal ou mensal da carteira contra os limites | Ainda não |
-| `avaliando-acao` | Avaliar se uma ação entra na carteira | Ainda não |
+| `researching-a-fund` | Analyzing a new equity fund for the research base | Yes, 9 times on 26/10/2026 |
+| `analyzing-a-market-event` | A relevant political or economic event happens | Not yet |
+| `reviewing-the-portfolio` | Weekly or monthly portfolio review against the limits | Not yet |
+| `evaluating-a-stock` | Deciding whether a stock enters the portfolio | Not yet |
 
-Formato: `.claude/skills/<nome>/SKILL.md`, com `name` e `description` no frontmatter. A descrição diz só quando usar ("Use when..."), nunca resume o procedimento.
+Format: `.claude/skills/<name>/SKILL.md`, with `name` and `description` in the frontmatter. The description says only when to use it ("Use when..."), never summarizes the procedure.
